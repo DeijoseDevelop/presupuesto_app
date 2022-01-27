@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana;
+
+}
+#form{
+    display: grid;
+    grid-template-areas: 'checkbox description valor button';
+    grid-gap: 10px;
+}
+#tipo, #description, #valor{
+    background-color: #fff;
+}
+#tipo{
+    grid-area: checkbox;
+}
+#description{
+    grid-area: description;
+}
+#valor{
+    grid-area: valor;
+}
+#añadir{
+    grid-area: button;
+}
+#presupuesto-article{
+    width: 50%;
+    margin: 10px auto;
+    background-color: rgba(40,40,40,.6);
+    border-radius: 10px;
+}
+#egresos-article, #ingresos-article{
+    display: flex;
+    justify-content: space-around;
+}
+#egresos-article h1, #ingresos-article h1{
+    font-size: 1.5rem;
+}
+#egresos-article div p,#ingresos-article p{
+    font-size: 1.3rem;
+}
+.aparecer{
+    display: block;
+}
+#section-presupuesto{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    text-align: center;
+    grid-template-areas: 'ingreso egreso';
+    margin-top: 10px;
+}
+#section-ingreso{
+    grid-area: ingreso;
+}
+#section-egreso{
+    grid-area: egreso;
+}
+.articulo-ingreso{
+    display: grid;
+    grid-template-columns: 50% 45% 5%;
+    padding: 20px;
+}
+.articulo-egreso{
+    display: grid;
+    grid-template-columns: 40% 40% 15% 5%;
+    padding: 20px;
+}
+.articulo-ingreso:nth-child(odd){
+    background-color: rgba(40, 185, 181,.1);
+}
+.articulo-egreso:nth-child(odd){
+    background-color: rgba(255, 80, 73,.1);
+}
+.articulo-ingreso p{
+    color: rgb(40, 185, 181);
+}
+.articulo-egreso p{
+    color: rgb(255, 80, 73);
+}
+.articulo-ingreso button, .articulo-egreso button{
+    color: #FF5049;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+    /* background-color: rgba(255, 80, 73,.1);
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; */
+}
+
+.articulo-egreso span{
+    background-color: rgb(255, 80, 73);
+    color: #fff;
+    border-radius: 1px;
+    margin-right: 5px;
+}
+.articulo-ingreso button:focus, .articulo-egreso button:focus { outline: none; }
+.articulo-ingreso button:active, .articulo-egreso button:active { transform: translateY(2px); }
+.articulo-ingreso:hover button, .articulo-egreso:hover button{
+    display: block;
+}
+.articulo-ingreso button ion-icon, .articulo-egreso button ion-icon{
+    font-size: 1.4rem;
+}
+
+@media(max-width:867px){
+    .articulo-ingreso{
+        grid-template-columns: 40% 59% 1%;
+    }
+    .articulo-egreso{
+        grid-template-columns: 40% 44% 15% 1%;
+    }
+}
+
+
+@media(max-width: 720px){
+
+    #presupuesto-article{
+        width: 70%;
+    }
+    #section-presupuesto{
+        grid-template-columns: 100%;
+        grid-template-areas: 'ingreso'
+                             'egreso';
+    }
+    #section-egreso{
+        margin-top: 20px;
+    }
+}
+@media(max-width: 600px){
+
+    #presupuesto-article{
+        width: 90%;
+    }
+}
+@media(max-width: 466px){
+    #form{
+        grid-template-areas: 'description description checkbox '
+                             'valor valor button';
+    }
+}
+@media(max-width: 450px){
+
+    #egresos-article h1, #ingresos-article h1{
+        font-size: 1.2rem;
+    }
+    #egresos-article div p,#ingresos-article p{
+        font-size: 1rem;
+    }
+}
+@media(max-width: 420px){
+    #section-presupuesto{
+        width: 100%;
+    }
+}
+@media(max-width: 380px){
+    #egresos-article, #ingresos-article{
+        display: flex;
+        flex-direction: column;
+    }
+    #egresos-article h1, #ingresos-article h1{
+        font-size: 1.5rem;
+        margin-bottom: 5px ;
+    }
+    #egresos-article div p,#ingresos-article p{
+        font-size: 1.3rem;
+        margin: 0px auto;
+    }
+}
+@media(max-width: 355px){
+    
+    .articulo-ingreso{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 10px;
+        place-items: center;
+    }
+    .articulo-egreso{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        grid-gap: 10px;
+        place-items: center;
+    }
+}
